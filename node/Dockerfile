@@ -2,10 +2,7 @@ FROM node:slim
 
 WORKDIR /usr/src/app
 
-RUN npm init -y
-
-RUN npm install express
-RUN npm install mysql --save
+COPY ./package*.json /usr/src/app/
 
 RUN apt-get update && apt-get install -y wget
 
